@@ -1,0 +1,1 @@
+class t extends HTMLElement{constructor(){super(),fetch("https://api.github.com/repos/dhruvkb/pls/releases").then(e=>{if(e.ok)return e.json();throw new Error("Failed to fetch latest version.")}).then(e=>{this.querySelector("#version").textContent=e[0].name.replace(/^v/,"")})}}customElements.define("pls-version",t);
